@@ -118,7 +118,7 @@ ul.ingredients-list>li {
   margin-bottom: 8px;
 }
 
-@media screen and (max-width:580px) {
+@media only screen and (max-width:580px) {
   .add-ingredient-form {
     display: flex;
     flex-direction: column;

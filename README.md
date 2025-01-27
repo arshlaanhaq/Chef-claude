@@ -48,7 +48,7 @@ Ensure you have the following installed:
 - Create a .env file in the root of the project.
 - Add the following line:
     ```env
-    VITE_API_KEY=your-api-key-here
+    VITE_HF_ACCESS_TOKEN=your-tokken-here
     ```
 5. Start the development server:
     ```bash

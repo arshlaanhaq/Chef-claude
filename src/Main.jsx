@@ -6,18 +6,21 @@ import { getRecipeFromMistral } from "./ai"
 export default function Main() {
     const [ingredients, setIngredients] = React.useState([])
     const [recipe, setRecipe] = React.useState("")
-
+    
     async function getRecipe() {
         const recipeMarkdown = await getRecipeFromMistral(ingredients)
         setRecipe(recipeMarkdown)
     }
 
     function addIngredient(event) {
-        event.preventDefault(); 
+        event.preventDefault();
         const formData = new FormData(event.target);
         const newIngredient = formData.get("ingredient")
+        if (newIngredient === null || newIngredient === "") {
+            return
+        }
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
-        event.target.reset(); 
+        event.target.reset();
     }
 
     return (
@@ -25,9 +28,10 @@ export default function Main() {
             <form onSubmit={addIngredient} className="add-ingredient-form">
                 <input
                     type="text"
-                    placeholder="e.g. oregano"
+                    placeholder="e.g. oregano(Min. 4 ingredients)"
                     aria-label="Add ingredient"
                     name="ingredient"
+                    required
                 />
                 <button>Add ingredient</button>
             </form>

@@ -23,11 +23,13 @@ export async function getRecipeFromMistral(ingredientsArr) {
         })
 
         if (response && response.choices && response.choices[0].message) {
+            console.log(response)
             return response.choices[0].message.content
+            
         } else {
             console.error('Invalid response format:', response)
         }
     } catch (err) {
-        console.error('Error during API call:', err)
+        console.error('Error during API call:', err.message)    
     }
 }

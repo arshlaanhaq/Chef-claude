@@ -16,7 +16,7 @@ export default function Main() {
         
         }
     }, [recipe])
-
+ 
 
     async function getRecipe() {
         const recipeMarkdown = await getRecipeFromMistral(ingredients)

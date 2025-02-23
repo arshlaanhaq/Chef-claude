@@ -7,7 +7,6 @@ export default function IngredientsList({ ingredients, getRecipe, recipeSection 
                     <li key={ingredient}>{ingredient}</li>
                 ))}
             </ul>
-            
             {ingredients.length > 3 && (
                 <div className="get-recipe-container">
                     <div ref={recipeSection}>  

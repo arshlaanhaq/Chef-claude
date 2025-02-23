@@ -65,4 +65,13 @@ Contributions are welcome! Please follow these steps:
 - Commit your changes.
 - Open a pull request.
 
-   
+---
+```diff
+### Important Note
+
+ Chef-Claude uses AI to fetch recipes based on the ingredients provided by the user. Please note:
+
+- The application allows only one recipe request per unique IP address within a 10-minute interval.
+- If you try to fetch recipes again within this time frame, the application will not process the request.
+- This limitation exists due to the use of a free Hugging Face AI account to ensure fair resource allocation and prevent overloading.
+```   

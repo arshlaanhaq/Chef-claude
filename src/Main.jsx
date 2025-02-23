@@ -21,12 +21,13 @@ export default function Main() {
     }, [recipe])
 
 
-    React.useEffect(()=>{
-        if(recipe != "" && recipeSection.current != null ){
-            recipeSection.current.scrollIntoView({behavior: "smooth"})
+    React.useEffect(() => {
+        if (recipe != "" && recipeSection.current != null) {
+            recipeSection.current.scrollIntoView({ behavior: "smooth" })
         }
-     }, [recipe])
-        async function getRecipe() {
+    }, [recipe])
+
+    async function getRecipe() {
         const recipeMarkdown = await getRecipeFromMistral(ingredients)
         setRecipe(recipeMarkdown)
     }
@@ -57,11 +58,7 @@ export default function Main() {
 
             {ingredients.length > 0 &&
                 <IngredientsList
-<<<<<<< HEAD
                     ref={recipeSection}
-=======
-                     ref={recipeSection}
->>>>>>> ac9ced5506863e565910effdc0614976ddff23cf
                     ingredients={ingredients}
                     getRecipe={getRecipe}
                 />
